@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <link rel="icon" href="title_logo.png">  <!-- Adding a logo the to title-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart_Clone</title>
+    <style>
+        *{
+            margin: 0%;
+            margin-top: 2px;
+        }
+
+        .main{
+            height: 2000px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+        }
+        header{
+            height: 60px;
+            width: 100%;
+            /* border: solid; */
+            background-color: white;
+            display: flex;
+            gap: 40px   ;
+            /* justify-content: center; */
+            align-items: center;
+        }
+
+        header .search{
+            height: 50px;
+            width: 800px;
+            background-color: lightcyan;
+            /* position: absolute; */
+            gap: 20px;
+            border-radius: 2%;
+            /* position: absolute;
+            left: 200px; */
+            display: flex;
+            align-items: center;
+        }
+
+        .search input[type="search"]{
+            width: 750px;
+            height: 40px;
+            background: none;
+            border: none;
+        }
+
+        .search input[type="search"]:focus{
+            border: none;
+        }
+
+        .search svg{
+            margin-left: 10px;
+            /* align-items: center; */
+        }
+        .login{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            /* position: absolute;
+            left: 1020px; */
+            /* top: 5px; */
+        }
+
+        .login:hover .bi-chevron-compact-down{
+            transform: rotate(180deg);
+            transition: transform 0.2s ease-out;
+        }
+        header p{
+            padding-top: 13px;
+        }
+        .cart{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            /* position: absolute;
+            left: 100px; */
+        }
+        .seller{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            /* position: absolute;
+            left: 80px; */
+            /* font-size: 20px; */
+        }
+        .opt{
+            gap: 5px   ;
+            /* position: absolute;
+            left: 200px; */
+        }
+
+        /* CONTAINER CSS */
+        .container{
+            margin-top: 0%;
+            height: 1000px;
+            width: 90%;
+            /* border: solid; */
+            background-color: lightcyan;
+            
+        }
+        .container .main-menu p{
+            font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+            /* font-size: ; */
+            /* padding-top: 15px; */
+        }
+        .container .main-menu-images{
+            display: flex;
+            flex-direction: column;
+        }
+        .container .main-menu{
+            margin-top: 0%;
+            height: 150px;
+            width: 1327px;
+            background-color: white;
+            /* border: solid; */
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            /* flex-direction: column; */
+        }
+        .words{
+             background-color: #ffff;
+             height: 60px;
+             width: 100%;
+             display: flex;
+             align-items: center;
+            }
+        .words p{
+    font-size: 20px;
+    font-weight: 600px;
+    font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+    color: #212121;
+    margin-left: 11px;
+              }
+.words .bi-arrow-right-circle-fill{
+    margin-left: 980px;
+} 
+.main3{
+    height: 260px;
+    width: 1200px;
+    background-color: white;
+    /* border: solid; */
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    justify-content: space-around;
+}
+.main3 .mouse p,b{
+    font-family: inter_regular,fallback-inter_regular,Arial,sans-serif;
+    margin-top: -5px;
+    text-align: center;
+}
+.main3 .mouse {
+    border: solid .3px;
+    height: 240px;
+    width:200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    
+}
+.main3 .mouse img:hover{
+    transform: scale(1.03);
+    transition: transform ease-in .2s;
+}
+.main3 .projector{
+    border: solid .3px;
+    height: 240px;
+    width:200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    gap: 4px;
+}
+.main3 .projector p ,b{
+    font-family: inter_regular,fallback-inter_regular,Arial,sans-serif;
+    margin-top: -5px;
+    text-align: center;
+}
+.main3 .projector img:hover{
+    transform: scale(1.1);
+    transition: transform ease-in .2s;
+}
+.main3 .printer{
+    border: solid .3px;
+    height: 240px;
+    width:200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+}
+.main3 .printer{
+    font-family: inter_regular,fallback-inter_regular,Arial,sans-serif;
+    margin-top: -5px;
+    text-align: center;
+}
+.main3 .printer img:hover{
+    transform: scale(1.1);
+    transition: transform ease-in .2s;
+}
+.main3 .monitor{
+    border: solid .3px;
+    height: 240px;
+    width:200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+}
+.main3 .monitor p{
+    font-family: inter_regular,fallback-inter_regular,Arial,sans-serif;
+    margin-top: -5px;
+    text-align: center;
+}
+.main3 .monitor img:hover{
+    transform: scale(1.1);
+    transition: transform ease-in .2s;
+}
+
+.main3 .pendrive{
+    border: solid .3px;
+    height: 240px;
+    width:200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+}
+.main3 .pendrive p{
+    font-family: inter_regular,fallback-inter_regular,Arial,sans-serif;
+    margin-top: -5px;
+    text-align: center;
+}
+.main3 .pendrive img:hover{
+    transform: scale(1.1);
+    transition: transform ease-in .2s;
+}
+/* .adflip{
+    position: absolute;
+    top: 487px;
+    right: 2%;
+} */
+
+/* beauty starts here */
+.beauty{
+    height: fit-content;
+    width: 100%;
+    background-color: white;
+    margin-top: 10px;
+    display: flex;
+}
+.beauty .bi-arrow-right-circle-fill{
+    position: relative;
+    left: 1110px;
+    top: 12px;
+}
+.beauty p{
+    margin-top: 10px;
+    font-size: 21px;
+    font-weight: 600px;
+    font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+    color: #212121;
+    margin-left: 11px;
+}
+.beauty-wrapper{
+    height: 270px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+
+}
+.beauty-wrapper .div{
+    height: 240px;
+    width:200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: solid 0.3px;
+    border-radius: 5px;
+}
+.sports{
+    height: fit-content;
+    width: 100%;
+    background-color: white;
+    margin-top: 10px;
+    display: flex;
+}
+.sports .bi-arrow-right-circle-fill{
+    position: relative;
+    left: 1110px;
+    top: 12px;
+}
+.sports p{
+    margin-top: 10px;
+    font-size: 21px;
+    font-weight: 600px;
+    font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+    color: #212121;
+    margin-left: 11px;
+}
+.winter{
+    height: fit-content;
+    width: 100%;
+    background-color: white;
+    margin-top: 10px;
+    display: flex;
+}
+.winter .bi-arrow-right-circle-fill{
+    position: relative;
+    left: 1110px;
+    top: 12px;
+}
+.winter p{
+    margin-top: 10px;
+    font-size: 21px;
+    font-weight: 600px;
+    font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+    color: #212121;
+    margin-left: 11px;
+}
+img:hover{
+    transform: scale(1.1);
+    transition: transform ease-in .2s;
+}
+.ender{
+    height: 290px;
+    width: 100%;
+    margin-top: -180px;
+    background-color:rgba(0, 0, 0, 0.895);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+}
+.ender h6{
+    font-size: 13px;
+    line-height: 13px;
+}
+.ender P{
+    color: gray;
+    font-size: 15px;
+}
+.ender .help{
+    position: relative;
+    bottom: 32px;
+}
+.ender .consumer{
+    position: relative;
+    bottom: 13px;
+}
+.ender .social{
+    position: relative;
+    bottom: 56px;
+}
+.mail{
+    position: relative;
+    bottom: 26px;
+}
+.office{
+    position: relative;
+    bottom: 10px;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <!-- Nav starts -->
+        <header>
+            <img src="logo.png" alt="">
+            <div class="search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+                <input type="search" name="" id="" placeholder="Search for Products,Brands and more" >
+            </div>
+            
+            <div class="login">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
+                <p>Login</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"/>
+                </svg>
+            </div>
+            <div class="cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg>
+                <p>Cart</p>
+            </div>
+            <div class="seller">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop-window" viewBox="0 0 16 16">
+                    <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h12V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zm2 .5a.5.5 0 0 1 .5.5V13h8V9.5a.5.5 0 0 1 1 0V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5a.5.5 0 0 1 .5-.5z"/>
+                </svg>
+                <p>Become a Seller</p>
+            </div>
+            <div class="opt">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                </svg>
+            </div>
+            
+        </header>
+        <!-- Nav stops -->
+
+
+        <!-- Container starts -->
+        <div class="container">
+            <div class="main-menu">
+                <div class="main-menu-images">
+                <img class="_2puWtW _3a3qyb" alt="Grocery" src="https://rukminim1.flixcart.com/flap/80/80/image/29327f40e9c4d26b.png?q=100">
+                <p>Groceries</p>
+                </div>
+
+                <div class="main-menu-images">
+                <img class="_2puWtW _3a3qyb" alt="Mobiles" src="https://rukminim1.flixcart.com/flap/80/80/image/22fddf3c7da4c4f4.png?q=100">
+                <p>Mobiles</p>
+                </div>
+                <div class="main-menu-images">
+                <img class="_2puWtW _3a3qyb" alt="Fashion" src="https://rukminim1.flixcart.com/fk-p-flap/80/80/image/0d75b34f7d8fbcb3.png?q=100">
+                <p>Fashion</p>
+                </div>
+                <div class="main-menu-images">
+                <img class="_2puWtW _3a3qyb" alt="Electronics" src="https://rukminim1.flixcart.com/flap/80/80/image/69c6589653afdb9a.png?q=100">
+                <p>Electronics</p>
+                </div>
+                <div class="main-menu-images">
+                <img class="_2puWtW _3a3qyb" alt="Home &amp; Furniture" src="https://rukminim1.flixcart.com/flap/80/80/image/ab7e2b022a4587dd.jpg?q=100">
+                <p>Home &amp; Furniture</p>
+                </div>
+                <div class="main-menu-images">
+                <img class="_2puWtW _3a3qyb" alt="Appliances" src="https://rukminim1.flixcart.com/flap/80/80/image/0ff199d1bd27eb98.png?q=100">
+                <p>Appliances</p>
+                </div>
+                <div class="main-menu-images">
+                <img class="_2puWtW _3a3qyb" alt="Travel" src="https://rukminim1.flixcart.com/flap/80/80/image/71050627a56b4693.png?q=100">
+                <p>Travel</p>
+                </div>
+                <div class="main-menu-images">
+                <img class="_2puWtW _3a3qyb" alt="Beauty, Toys &amp; More" src="https://rukminim1.flixcart.com/flap/80/80/image/dff3f7adcf3a90c6.png?q=100">
+                <p>Beauty, Toys &amp; More</p>
+                </div>
+                <div class="main-menu-images">
+                <img class="_2puWtW _3a3qyb" alt="Two Wheelers" src="https://rukminim1.flixcart.com/fk-p-flap/80/80/image/05d708653beff580.png?q=100">
+                <p>Two Wheelers</p>
+                </div>
+            </div>
+
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="c1.webp" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="c2.webp" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="c3.webp" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            <div class="words">
+                <h2>Best of electronics</h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                  </svg>
+                
+            </div>
+            <div class="main3">
+                <div class="mouse">
+                  <img src="keyboard.png" alt="" height="150px" width="150px">
+                  <p> Keyboard</p>
+                  <p><b>From &#8377;  169</b></p>
+                </div>
+                <div class="projector">
+                  <img src="projector.webp" alt="" height="150px" width="150px">
+                  <p>Projectors</p>
+                  <p><b>From &#8377; 999</b></p>
+                </div>
+                <div class="printer">
+                  <img src="printer.webp" alt="" height="150px" width="150px">
+                  <p>Printer</p>
+                  <P><b>From &#8377;3999</b></P>
+                </div>
+                <div class="monitor">
+                  <img src="monitor.webp" alt="" height="150px" width="150px">
+                  <p>Monitor</p>
+                  <p><b>From &#8377; 5999</b></p>
+                </div>
+                <div class="pendrive">
+                  <img src="pendrive.webp" alt="" height="150px" width="150px">
+                  <p>Pendrive</p>
+                  <p><b>From &#8377; 299</b></p>
+                </div>
+              </div>
+                <!-- main3 content ends here -->
+    
+                
+              <!-- beauty food ,toys and more -->
+    
+            
+            <div class="beauty">
+              <p><b>Beauty ,Food, Toys and more</b></p>
+               <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                 <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+               </svg>
+             </div>
+    
+             <!-- beauty wrapper starts here -->
+             <div class="beauty-wrapper">
+    
+              <div class="div">
+                <img src="cycle.webp" alt="" height="150px" width="150px">
+                <p>Bicycle</p>
+                <p><b>From &#8377; 3999</b></p>
+              </div>
+              <div class="div">
+                <img src="microphone.webp" alt="" height="150px" width="150px">
+                <p>Microphone</p>
+                <p><b>From &#8377; 999</b></p>
+              </div>
+              <div class="div">
+                <img src="coffee powder.webp" alt="" height="150px" width="150px">
+                <p>Coffee Powder</p>
+                <p><b>From &#8377; 99</b></p>
+              </div>
+              <div class="div">
+                <img src="helmet.webp" alt="" height="150px" width="150px">
+                <p>Helmet</p>
+                <p><b>From &#8377; 1999</b></p>
+              </div>
+              <div class="div">
+                <img src="remote control toys.webp" alt="" height="150px" width="150px">
+                <p>Remote Control Toys</p>
+                <p><b>From &#8377; 999</b></p>
+              </div>
+              <div class="div">
+                <img src="stationary.webp" alt="" height="150px" width="150px">
+                <p>stationery</p>
+                <p><b>From &#8377; 999</b></p>
+              </div>
+            
+              </div>
+              <!-- sports starts here -->
+              <div class="sports">
+                <p><b>Sports Products and More</b></p>
+                 <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                   <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                 </svg>
+               </div>
+      
+              
+               <div class="beauty-wrapper">
+      
+                <div class="div">
+                  <img src="gym.webp" alt="" height="150px" width="150px">
+                  <p>Gym Essentials</p>
+                  <p><b>From &#8377; 99</b></p>
+                </div>
+                <div class="div">
+                  <img src="shoes.webp" alt="" height="150px" width="150px">
+                  <p>shoes</p>
+                  <p><b>From &#8377; 699</b></p>
+                </div>
+                <div class="div">
+                  <img src="lubricant.webp" alt="" height="150px" width="150px">
+                  <p>Lubricant</p>
+                  <p><b>From &#8377; 399</b></p>
+                </div>
+                <div class="div">
+                  <img src="telescope.webp" alt="" height="150px" width="150px">
+                  <p>Telescope</p>
+                  <p><b>From &#8377; 4999</b></p>
+                </div>
+                <div class="div">
+                  <img src="trimmer.webp" alt="" height="150px" width="150px">
+                  <p>Trimmer</p>
+                  <p><b>From &#8377; 499</b></p>
+                </div>
+                <div class="div">
+                  <img src="tyres.webp" alt="" height="150px" width="150px">
+                  <p>Tyre</p>
+                  <p><b>From &#8377; 1399</b></p>
+                </div>
+                  <!-- sports ends here -->
+                <!-- winter essentials starts here -->
+                </div>
+                <div class="winter">
+                  <p><b>Winter Products and More</b></p>
+                   <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                     <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                   </svg>
+                 </div>
+        
+                 <div class="beauty-wrapper">
+        
+                  <div class="div">
+                    <img src="jacket.webp" alt="" height="150px" width="150px">
+                    <p>Jacket</p>
+                    <p><b>From &#8377; 1299</b></p>
+                  </div>
+                  <div class="div">
+                    <img src="yoga mat.webp" alt="" height="150px" width="150px">
+                    <p>Mat</p>
+                    <p><b>From &#8377; 299</b></p>
+                  </div>
+                  <div class="div">
+                    <img src="glass.webp" alt="" height="150px" width="150px">
+                    <p>Glasses</p>
+                    <p><b>From &#8377; 159</b></p>
+                  </div>
+                  <div class="div">
+                    <img src="hammer.webp" alt="" height="150px" width="150px">
+                    <p>Hammer</p>
+                    <p><b>From &#8377; 249</b></p>
+                  </div>
+                  <div class="div">
+                    <img src="fridge.webp" alt="" height="150px" width="150px">
+                    <p>Fridge</p>
+                    <p><b>From &#8377; 9999</b></p>
+                  </div>
+                  <div class="div">
+                    <img src="rope.webp" alt="" height="150px" width="150px">
+                    <p>Rope</p>
+                    <p><b>From &#8377;39</b></p>
+                  </div>
+                
+                  </div>
+                  <!-- winter essentials end here -->
+               </div>
+               </div>
+               
+             </div>
+             
+            </div>
+        <!-- <div class="adflip">
+          <img src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/images/fk-default-image-75ff340b.png?q=90" alt="" height="300px" width="255px">
+        </div> -->
+          <!-- main content ends here -->
+        </div>
+     <!-- ender starts here -->
+     <div class="ender">
+      <div class="aboutterm">
+        <p>ABOUT</p>
+        <h6>Contact Us</h6>
+        <h6>About Us</h6>
+        <h6>Careers</h6>
+        <h6>Flipkart Stories</h6>
+        <h6>Press</h6>
+        <h6>Flipkart Wholesale</h6>
+        <h6>Cleartrip</h6>
+        <h6>Corporate Information</h6>
+      </div>
+      <div class="help">
+        <p>HELP</p>
+        <h6>Payments</h6>
+        <h6>Shipping</h6>
+        <h6>Cancellation & Returns</h6>
+        <h6>FAQ</h6>
+        <h6>Report Infringement</h6>
+    
+      </div>
+      <div class="consumer">
+        <p>CONSUMER POLICY</p>
+        <h6>Cancellation and Returns</h6>
+        <h6>Terms of Use</h6>
+        <h6>Security</h6>
+        <h6>Privacy</h6>
+        <h6>Sitemap</h6>
+        <h6>Grievance Redressal</h6>
+        <h6>EPR Compliance</h6>
+      </div>
+      <div class="social">
+        <p>SOCIAL</p>
+        <h6>Facebook</h6>
+        <h6>X</h6>
+        <h6>Youtube</h6>
+      </div>
+      <div class="line">
+        
+      </div>
+      <div class="mail">
+        <p>Mail Us:</p>
+        <h6>Flipkart Internet Private Limited,</h6>
+        <h6>Buildings Alyssa,Begonia &</h6>
+        <h6>Clove Embassy Tech Village,</h6>
+        <h6>Outer Ring Road,Devarabeesanahalli Village,</h6>
+        <h6>Bengaluru-560103</h6>
+        <h6>Karnataka,India</h6>
+      </div>
+      <div class="office">
+        <p>Registered Office Adress</p>
+        <h6>Flipkart Internet Private Limited,</h6>
+        <h6>Buildings Alyssa,Begonia &</h6>
+        <h6>Clove Embassy Tech Village,</h6>
+        <h6>Outer Ring Road,Devarabeesanahalli Village,</h6>
+        <h6>Bengaluru-560103</h6>
+        <h6>Karnataka,India</h6>
+        <h6>CIN:U51109KA2012PTC066107</h6>
+        <h6>Telephone: 044-45614700</h6>
+      </div>
+
+           
+
+        <!-- Container stops -->
+    </div>
+</body>
+</html>
